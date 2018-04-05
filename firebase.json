@@ -1,0 +1,37 @@
+{
+  "hosting": {
+    "public": "dist/public",
+    "rewrites": [
+      {
+        "source": "**/**",
+        "function": "app-next"
+      }
+    ],
+    "predeploy": "yarn build-public"
+  },
+  "functions": {
+    "source": "dist/functions",
+    "predeploy":
+    "yarn build-funcs && yarn build-app && yarn copy-deps && yarn install-deps"
+  }
+}
+
+//{
+//  "functions": {
+//    "source": "src/functions",
+//    "rewrites": [
+//      {
+//        "source": "**/**",
+//        "function": "next"
+//      }
+//    ]
+//  },
+//  "hosting": {
+//    "public": "src/public",
+//    "ignore": [
+//      "firebase.json",
+//      "**/.*",
+//      "**/node_modules/**"
+//    ]
+//  }
+//}
