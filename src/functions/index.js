@@ -1,6 +1,7 @@
 import { nextApp as next } from "./app/app"
 import { mars } from "./worlds/mars"
 import { jupiter } from "./worlds/jupiter"
+import { callisto } from "./worlds/callisto"
 
 /*
 Namespace application services with function groups.
@@ -19,6 +20,7 @@ const app = {
 const greetings = {
 	mars,
 	jupiter,
+	callisto
 	// other funcs
 }
 
