@@ -31,7 +31,7 @@ class AboutPage extends React.Component {
 		// Construct the email link credential from the current URL.
 		const email = window.localStorage.getItem('emailForSignIn') || '';
 
-		firebase.auth().onAuthStateChanged(user => {
+    this.unregisterAuthObserver = firebase.auth().onAuthStateChanged(user => {
 			if (user) {
 				// User is signed in.
 				this.setState({ user })
@@ -41,6 +41,11 @@ class AboutPage extends React.Component {
 			}
 		});
 	}
+
+  componentWillUnmount() {
+    // Un-registers the auth state observer.
+    this.unregisterAuthObserver();
+  }
 
 	render () {
 		const { user } = this.state
