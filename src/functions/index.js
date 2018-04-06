@@ -2,6 +2,7 @@ import { nextApp as next } from "./app/app"
 import { mars } from "./worlds/mars"
 import { jupiter } from "./worlds/jupiter"
 import { callisto } from "./worlds/callisto"
+import { graphqlservice } from "./graphql"
 
 /*
 Namespace application services with function groups.
@@ -11,17 +12,19 @@ Partially deploy namespaces for independent service updates.
 // SSR Next.js app Cloud Function used by Firebase Hosting
 // yarn deploy-app
 const app = {
-	next,
-	// other Hosting dependencies
+  next,
+  // other Hosting dependencies
 }
 
 // Mircoservices that make up the Greetings service
 // yarn deploy-functions
 const greetings = {
-	mars,
-	jupiter,
-	callisto
-	// other funcs
+  mars,
+  jupiter,
+  callisto,
+  // other funcs
 }
 
-export { app, greetings }
+export {
+  app, greetings, graphqlservice,
+}
